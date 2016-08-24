@@ -171,6 +171,8 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
 
+        Laralib\L5scaffold\GeneratorsServiceProvider::class,
+
     ],
 
     /*

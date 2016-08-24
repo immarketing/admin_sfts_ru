@@ -4,6 +4,8 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
@@ -17,7 +19,8 @@
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*",
         "laracasts/generators": "^1.1",
-        "ignasbernotas/laravel-model-generator": "^1.1"
+        "ignasbernotas/laravel-model-generator": "^1.1",
+        "laralib/l5scaffold": "*"
     },
     "autoload": {
         "classmap": [
