@@ -246,5 +246,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="admin_sfts_ru node_modules" level="project" />
   </component>
 </module>
