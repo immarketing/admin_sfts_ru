@@ -1,0 +1,23 @@
+{
+  "name": "admin_sfts_ru",
+  "description": "no desc",
+  "main": "",
+  "authors": [
+    "AVGorbunov <immarketing@yandex.ru>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/immarketing/admin_sfts_ru",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "font-awesome": "^4.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}
