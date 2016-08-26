@@ -13,21 +13,13 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700"> -->
 
     <!-- Styles -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
     <link rel="stylesheet" href="/css/bootstrap.css">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="/css/app.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Open+Sans+Condensed:300,700&subset=latin,cyrillic'
           rel='stylesheet' type='text/css'>
 
-
-    <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -79,8 +71,10 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
+    <!--<script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script> -->
+    <script src="/js/app.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
 </body>
 </html>
