@@ -5,6 +5,8 @@ namespace admin_sfts_ru\Http\Controllers;
 use admin_sfts_ru\Http\Requests;
 use Illuminate\Http\Request;
 
+use admin_sfts_ru\Models\Agpplgroup;
+
 class HomeController extends Controller
 {
     /**
@@ -24,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $groups = Agpplgroup::all();
+        return view('home', ['pplgroups' => $groups]);
     }
 }

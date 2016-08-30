@@ -13,7 +13,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss');
-    mix.copy('bower_components/bootstrap/dist/fonts', 'public/fonts');
+    mix.copy('bower_components/bootstrap/dist/fonts', 'public/fonts/bootstrap');
     mix.copy('bower_components/font-awesome/fonts', 'public/fonts');
 
     mix.copy('bower_components/jquery/dist/jquery.js', 'resources/assets/js');
