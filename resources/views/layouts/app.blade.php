@@ -71,8 +71,8 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <!--<script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script> -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
     <script src="/js/app.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 

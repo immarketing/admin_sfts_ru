@@ -19,7 +19,10 @@ elixir(function(mix) {
     mix.copy('bower_components/jquery/dist/jquery.js', 'resources/assets/js');
     mix.copy('bower_components/bootstrap/dist/js/bootstrap.js', 'resources/assets/js');
 
-    mix.scripts(['jquery.js', 'bootstrap.js', 'app.js'], 'public/js/app.js');
+    mix.scripts(['jquery.js'], 'public/js/jquery.js');
+    mix.scripts(['bootstrap.js'], 'public/js/bootstrap.js');
+    mix.scripts(['app.js'], 'public/js/app.js');
+    //mix.scripts(['jquery.js', 'bootstrap.js', 'app.js'], 'public/js/app.js');
     //mix.version(['js/app.js','css/app.css']);
 
 });

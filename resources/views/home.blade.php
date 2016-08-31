@@ -39,30 +39,48 @@
                                         </thead>
                                         <tbody>
                                         @foreach($pplgroups as $group)
-                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}">
+                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}" >
                                                 <td>{{$group->id}}</td>
                                                 <td>{{$group->getCode()}}</td>
                                                 <td>{{$group->getName()}}</td>
                                                 <td>
+                                                    <button class="btn btn-warning btn-xs btn-ag-edit" type="button" onclick="agEditPplgroup({{$group->id}});">
+                                                        <i class="glyphicon glyphicon-edit"></i> Редактировать
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-xs btn-ag-remove" onclick="agRemovePplgroup({{$group->id}});">
+                                                        <i class="glyphicon glyphicon-remove"></i> Удалить
+                                                    </button>
                                                     <div class="btn-group">
                                                         <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Действия.... <span class="caret"></span>
+                                                            Состав.... <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
-                                                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выход</a></li>
-                                                            <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-edit"></i> Редактировать</a></li>
-                                                            <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-eye-open"></i> Смотреть состав</a></li>
-                                                            <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-edit"></i> Редактировать состав</a></li>
+                                                            <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-edit"></i> ...редактировать</a></li>
+                                                            <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-eye-open"></i> ...смотреть</a></li>
+                                                            <li><a href="{{ url('/logout') }}"><i class="glyphicon glyphicon-eye-open"></i> ...обновить по отредактированному</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}-edit" class="ag-pplgroups-tr-edit">
+                                                <form action="" method="POST" id="ag-pplgroups-form-id-{{$group->id}}-edit" name="ag-pplgroups-form-id-{{$group->id}}-edit">
+                                                    <input type="hidden" name="_method" value="PUT">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <td>{{$group->id}}</td>
+                                                    <td><input type="text" id="title-field" name="title" class="form-control" value=""/></td>
+                                                    <td><input type="text" id="title-field" name="title" class="form-control" value=""/></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary btn-xs ">Save</button>
+                                                        <button type="button" class="btn btn-danger btn-xs" onclick="agEditPplgroupCancel({{$group->id}});">Отмена</button>
+                                                    </td>
+                                                </form>
+                                            </tr>
                                         @endforeach
-                                        <tr id="ag-pplgroups-tr-id-edit">
-                                            <form action="" method="POST">
+                                        <tr id="ag-pplgroups-tr-id-0-create" class="ag-pplgroups-tr-create" >
+                                            <form action="" method="POST" id="ag-pplgroups-form-id-0-create" name="ag-pplgroups-form-id-0-create">
                                                 <input type="hidden" name="_method" value="PUT">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <td>{{$group->id}}</td>
+                                                <td></td>
                                                 <td><input type="text" id="title-field" name="title" class="form-control" value=""/></td>
                                                 <td><input type="text" id="title-field" name="title" class="form-control" value=""/></td>
                                                 <td>
