@@ -11,16 +11,28 @@ function agEditPplgroupCancel(groupID) {
     tridedit="ag-pplgroups-tr-id-"+groupID+"-edit";
     $("tr#"+trid).show();
     $("tr#"+tridedit).hide();
+    agEnableEditBtns();
+}
+
+function agEnableEditBtns() {
+    $("button.btn-ag-create").prop( "disabled", false );
     $("button.btn-ag-edit").prop( "disabled", false );
     $("button.btn-ag-remove").prop( "disabled", false );
+
+}
+
+function agDisableEditBtns() {
+    $("button.btn-ag-create").prop( "disabled", true );
+    $("button.btn-ag-edit").prop( "disabled", true );
+    $("button.btn-ag-remove").prop( "disabled", true );
 }
 
 function agEditPplgroup(groupID) {
     trid="ag-pplgroups-tr-id-"+groupID;
     tridedit="ag-pplgroups-tr-id-"+groupID+"-edit";
     //
-    $("button.btn-ag-edit").prop( "disabled", true );
-    $("button.btn-ag-remove").prop( "disabled", true );
+
+    agDisableEditBtns();
 
     $("tr#"+trid).prop( "disabled", true );
     $("tr#"+trid).hide();

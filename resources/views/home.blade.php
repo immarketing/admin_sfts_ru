@@ -31,10 +31,10 @@
                                     <table class="table table-condensed table-hover table-bordered">
                                         <thead>
                                         <tr>
-                                            <th>№ группы</th>
-                                            <th>Код группы</th>
-                                            <th>Наименование</th>
-                                            <th>Действия</th>
+                                            <th class="col-xs-1">№ группы</th>
+                                            <th class="col-xs-4">Код группы</th>
+                                            <th class="col-xs-4">Наименование</th>
+                                            <th class="col-xs-3">Действия</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -67,10 +67,10 @@
                                                     <input type="hidden" name="_method" value="PUT">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <td>{{$group->id}}</td>
-                                                    <td><input type="text" id="title-field" name="title" class="form-control" value=""/></td>
-                                                    <td><input type="text" id="title-field" name="title" class="form-control" value=""/></td>
+                                                    <td><input type="text" id="title-field" name="title" class="form-control" value="{{$group->getCode()}}" readonly/></td>
+                                                    <td><input type="text" id="title-field" name="title" class="form-control" value="{{$group->getName()}}"/></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary btn-xs ">Save</button>
+                                                        <button type="button" class="btn btn-primary btn-xs ">Сохранить</button>
                                                         <button type="button" class="btn btn-danger btn-xs" onclick="agEditPplgroupCancel({{$group->id}});">Отмена</button>
                                                     </td>
                                                 </form>
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div class="panel-footer">Panel Footer
-                            <a type="button" class="btn btn-success btn-xs pull-right" href="{{ route('tweets.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>                    </div>
+                            <a type="button" class="btn btn-success btn-xs pull-right btn-ag-create" href="{{ route('tweets.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>                    </div>
                     </div>
                 </div>
             </div>
