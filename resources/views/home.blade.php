@@ -39,7 +39,7 @@
                                         </thead>
                                         <tbody>
                                         @foreach($pplgroups as $group)
-                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}" >
+                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}" class="ag-pplgroups-tr">
                                                 <td>{{$group->id}}</td>
                                                 <td>{{$group->getCode()}}</td>
                                                 <td>{{$group->getName()}}</td>
@@ -62,7 +62,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}-edit" class="ag-pplgroups-tr-edit">
+                                            <tr id="ag-pplgroups-tr-id-{{$group->id}}-edit" class="ag-pplgroups-tr ag-pplgroups-tr-edit">
                                                 <form action="" method="POST" id="ag-pplgroups-form-id-{{$group->id}}-edit" name="ag-pplgroups-form-id-{{$group->id}}-edit">
                                                     <input type="hidden" name="_method" value="PUT">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
