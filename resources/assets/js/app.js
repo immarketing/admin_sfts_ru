@@ -43,7 +43,8 @@ function agEditPplgroup(groupID) {
     agDisableEditBtns();
     */
 
-    var dlgDivDialogModalContentHeaderCls = $('#agEditingForm');//$('<div/>').append('<div id="third">Третий</div>');
+    var dlgDivDialogModalContentHeaderCls = $('#ag-ppl-group-editing-form');//$('<div/>').append('<div id="third">Третий</div>');
+
 
     showModal('Отредактируйте группу обучающихся',
         //dlgDivDialogModalContentHeaderCls.html(),
