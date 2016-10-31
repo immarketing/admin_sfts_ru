@@ -19,9 +19,14 @@ elixir(function(mix) {
     mix.copy('bower_components/jquery/dist/jquery.js', 'resources/assets/js');
     mix.copy('bower_components/bootstrap/dist/js/bootstrap.js', 'resources/assets/js');
 
+    mix.copy('bower_components/bootstrap/dist/js/bootstrap.js', 'resources/assets/js');
+
+    mix.copy('bower_components/jquery.bootgrid/dist/jquery.bootgrid.js', 'public/js/');
+    mix.copy('bower_components/jquery.bootgrid/dist/jquery.bootgrid.fa.js', 'public/js/');
+    mix.copy('bower_components/jquery.bootgrid/dist/jquery.bootgrid.css', 'public/css/');
     mix.scripts(['jquery.js'], 'public/js/jquery.js');
     mix.scripts(['bootstrap.js'], 'public/js/bootstrap.js');
-    mix.scripts(['app.js'], 'public/js/app.js');
+    mix.scripts(['agmodal.js','app.js'], 'public/js/app.js');
     //mix.scripts(['jquery.js', 'bootstrap.js', 'app.js'], 'public/js/app.js');
     //mix.version(['js/app.js','css/app.css']);
 

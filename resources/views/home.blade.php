@@ -15,6 +15,23 @@
         </div>
     </div>
 
+    <div style="display: none">
+        <form id="agEditingForm">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="panel-group">
@@ -44,14 +61,14 @@
                                                 <td>{{$group->getCode()}}</td>
                                                 <td>{{$group->getName()}}</td>
                                                 <td>
-                                                    <button class="btn btn-warning btn-xs btn-ag-edit" type="button" onclick="agEditPplgroup({{$group->id}});">
+                                                    <button class="btn btn-warning btn-xs btn-ag-dsbl-on-edit btn-ag-edit" type="button" onclick="agEditPplgroup({{$group->id}});">
                                                         <i class="glyphicon glyphicon-edit"></i> Редактировать
                                                     </button>
-                                                    <button type="button" class="btn btn-danger btn-xs btn-ag-remove" onclick="agRemovePplgroup({{$group->id}});">
+                                                    <button type="button" class="btn btn-danger btn-xs btn-ag-dsbl-on-edit btn-ag-remove" onclick="agRemovePplgroup({{$group->id}});">
                                                         <i class="glyphicon glyphicon-remove"></i> Удалить
                                                     </button>
                                                     <div class="btn-group">
-                                                        <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <button class="btn btn-primary btn-xs btn-ag-dsbl-on-edit dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             Состав.... <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
@@ -62,19 +79,31 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <!--
                                             <tr id="ag-pplgroups-tr-id-{{$group->id}}-edit" class="ag-pplgroups-tr ag-pplgroups-tr-edit">
-                                                <form action="" method="POST" id="ag-pplgroups-form-id-{{$group->id}}-edit" name="ag-pplgroups-form-id-{{$group->id}}-edit">
-                                                    <input type="hidden" name="_method" value="PUT">
+                                                <td>
+                                            <form action="" method="POST" id="ag-pplgroups-form-id-{{$group->id}}-edit" name="ag-pplgroups-form-id-{{$group->id}}-edit">
+                                                    <input type="hidden" name="_method" value="POST">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <td>{{$group->id}}</td>
-                                                    <td><input type="text" id="title-field" name="title" class="form-control" value="{{$group->getCode()}}" readonly/></td>
-                                                    <td><input type="text" id="title-field" name="title" class="form-control" value="{{$group->getName()}}"/></td>
-                                                    <td>
+                                                <div class="row">
+                                                    <div>
+                                                        <span><td>{{$group->id}}</td></span>
+                                                    </div>
+                                                    <div>
+                                                        <span><input type="text" id="title-field" name="title" class="form-control" value="{{$group->getCode()}}" readonly/></span>
+                                                    </div>
+                                                    <div>
+                                                        <span><input type="text" id="title-field" name="title" class="form-control" value="{{$group->getName()}}"/></span>
+                                                    </div>
+                                                    <div>
                                                         <button type="button" class="btn btn-primary btn-xs ">Сохранить</button>
                                                         <button type="button" class="btn btn-danger btn-xs" onclick="agEditPplgroupCancel({{$group->id}});">Отмена</button>
-                                                    </td>
-                                                </form>
+                                                    </div>
+                                                </div>
+                                            </form>
+                            </td>
                                             </tr>
+                                            -->
                                         @endforeach
                                         <tr id="ag-pplgroups-tr-id-0-create" class="ag-pplgroups-tr-create" >
                                             <form action="" method="POST" id="ag-pplgroups-form-id-0-create" name="ag-pplgroups-form-id-0-create">
@@ -96,7 +125,7 @@
                             </div>
                         </div>
                         <div class="panel-footer">Panel Footer
-                            <a type="button" class="btn btn-success btn-xs pull-right btn-ag-create" href="{{ route('tweets.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>                    </div>
+                            <a type="button" class="btn btn-ag-dsbl-on-edit btn-success btn-xs pull-right btn-ag-create" href="{{ route('tweets.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>                    </div>
                     </div>
                 </div>
             </div>
