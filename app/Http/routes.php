@@ -21,5 +21,5 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource("tweets","TweetController");
 
-Route::resource('pplgroup', 'PplGroupController', ['only' => ['store', 'update', 'destroy']]);
+Route::resource('pplgroup', 'PplGroupController', ['only' => ['index', 'store', 'update', 'destroy']]);
 //resource("tweets","TweetController");

@@ -53,7 +53,15 @@ $('#salary').val($(this).data("salary"));
 
 function agStorePPLGroup (){
     var answrJSON;
-    answrJSON = {};
+    answrJSON = {
+
+    };
+    $.ajaxSetup({
+        //header:$('meta[name="_token"]').attr('content'),
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $.ajax({ // инициaлизируeм ajax зaпрoс
         type: 'POST', // oтпрaвляeм в POST фoрмaтe, мoжнo GET
         //url: 'index.php?action=saveanswers&_ijt='+_ijt, // путь дo oбрaбoтчикa, у нaс oн лeжит в тoй жe пaпкe

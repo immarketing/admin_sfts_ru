@@ -21,6 +21,7 @@ class PplGroupController extends Controller
     public function index()
     {
         //
+        return "OK";
     }
 
     /**
