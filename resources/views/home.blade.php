@@ -15,23 +15,45 @@
         </div>
     </div>
 
-    <div style="display: none">
-        <form id="ag-ppl-group-editing-form">
-            <div>
-                <div class="form-group">
-                    <label for="ag-ppl-group-editing-form-pplgrp-nmber">Номер группы:</label>
-                    <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-nmber">
+    <!-- Modal -->
+    <div class="modal " id="ag-ppl-group-editing-div" tabindex="-1" role="dialog" aria-labelledby="ag-ppl-group-editing-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="ag-ppl-group-editing-label">
+                        <span id="ag-ppl-group-editing-title-action"></span> группы обучающихся</h4>
                 </div>
-                <div class="form-group">
-                    <label for="ag-ppl-group-editing-form-pplgrp-code">Код группы:</label>
-                    <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-code">
+                <div class="modal-body">
+                    <form id="ag-ppl-group-editing-form">
+                        <input type="hidden" name="_action" value=""> <!-- i e d -->
+                        <input type="hidden" name="_method" value="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div>
+                            <div class="form-group">
+                                <label for="ag-ppl-group-editing-form-pplgrp-nmber">Номер группы:</label>
+                                <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-nmber"
+                                       name="ag-ppl-group-editing-form-pplgrp-nmber">
+                            </div>
+                            <div class="form-group">
+                                <label for="ag-ppl-group-editing-form-pplgrp-code">Код группы:</label>
+                                <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-code"
+                                       name="ag-ppl-group-editing-form-pplgrp-code">
+                            </div>
+                            <div class="form-group">
+                                <label for="ag-ppl-group-editing-form-pplgrp-name">Наименование:</label>
+                                <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-name"
+                                       name="ag-ppl-group-editing-form-pplgrp-name">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="ag-ppl-group-editing-form-pplgrp-name">Наименование:</label>
-                    <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-name">
+                <div class="modal-footer">
+                    <button type="button" id="ag-ppl-group-editing-form-button-cancel" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                    <button type="button" id="ag-ppl-group-editing-form-button-save" class="btn btn-primary">Сохранить</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 
     <div class="container">
@@ -127,7 +149,7 @@
                             </div>
                         </div>
                         <div class="panel-footer">Panel Footer
-                            <a type="button" class="btn btn-ag-dsbl-on-edit btn-success btn-xs pull-right btn-ag-create" href="{{ route('tweets.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>                    </div>
+                            <a id="create-pplgroup" type="button" class="btn btn-ag-dsbl-on-edit btn-success btn-xs pull-right btn-ag-create" ><i class="glyphicon glyphicon-plus"></i> Create</a>                    </div>
                     </div>
                 </div>
             </div>
