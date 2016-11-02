@@ -36,7 +36,7 @@
                             <div class="form-group">
                                 <label for="ag-ppl-group-editing-form-pplgrp-nmber">Номер группы:</label>
                                 <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-nmber"
-                                       name="ag-ppl-group-editing-form-pplgrp-nmber">
+                                       name="ag-ppl-group-editing-form-pplgrp-nmber" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="ag-ppl-group-editing-form-pplgrp-code">Код группы:</label>
@@ -47,6 +47,12 @@
                                 <label for="ag-ppl-group-editing-form-pplgrp-name">Наименование:</label>
                                 <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-name"
                                        name="ag-ppl-group-editing-form-pplgrp-name">
+                            </div>
+                            <div class="form-group alert alert-danger" id="ag-ppl-group-editing-form-pplgrp-oppresult-div">
+
+                                <label for="ag-ppl-group-editing-form-pplgrp-oppresult">Результат операции:</label>
+                                <input class="form-control" id="ag-ppl-group-editing-form-pplgrp-oppresult"
+                                       name="ag-ppl-group-editing-form-pplgrp-oppresult" readonly>
                             </div>
                         </div>
                     </form>

@@ -48,6 +48,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Домой</a></li>
+                    <li><a href="{{ route('pplgroup.index') }}">Группы обучающихся</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -2,6 +2,7 @@
 
 namespace admin_sfts_ru\Http\Controllers;
 
+use admin_sfts_ru\Models\Agpplgroup;
 use Illuminate\Http\Request;
 
 use admin_sfts_ru\Http\Requests;
@@ -21,7 +22,9 @@ class PplGroupController extends Controller
     public function index()
     {
         //
-        return "OK";
+        $groups = Agpplgroup::all();
+        return view('pplgroups', ['pplgroups' => $groups]);
+        //return "OK";
     }
 
     /**
@@ -43,7 +46,36 @@ class PplGroupController extends Controller
     public function store(Request $request)
     {
         //
-        return "OK";
+        //return "OK";
+        /*
+        $flight = new Flight;
+        $flight->name = $request->name;
+        $flight->save();
+        */
+
+        $wasError = false;
+        $result = ['result' => 'OK', 'XSRF-TOKEN'=> csrf_token()];
+
+        try {
+            $pplgroup = new Agpplgroup();
+            $pplgroup->setCode($request->input('ag-ppl-group-editing-form-pplgrp-code'));
+            $pplgroup->setName($request->input('ag-ppl-group-editing-form-pplgrp-name'));
+            $pplgroup->saveOrFail();
+            // ag-ppl-group-editing-form-pplgrp-code
+            // ag-ppl-group-editing-form-pplgrp-name
+
+        } catch (\Exception $e) {
+            $wasError = true;
+            $result['error.code'] = $e->getCode();
+            $result['error.message'] = $e->getMessage();
+        }
+
+
+        $inputArray = $request->all();
+        if ($wasError) {
+            $result['result'] = 'error';
+        }
+        return response()->json($result);
     }
 
     /**
@@ -78,6 +110,12 @@ class PplGroupController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $wasError = false;
+        $result = ['result' => 'OK', 'XSRF-TOKEN'=> csrf_token()];
+        if ($wasError) {
+            $result['result'] = 'error';
+        }
+        return response()->json($result);
     }
 
     /**

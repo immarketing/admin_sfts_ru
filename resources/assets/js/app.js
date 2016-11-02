@@ -34,34 +34,6 @@ function agDisableEditBtns() {
     $("button.btn-ag-dsbl-on-edit").prop( "disabled", true );
 }
 
-function agEditPplgroup(groupID) {
-    trid="ag-pplgroups-tr-id-"+groupID;
-    tridedit="ag-pplgroups-tr-id-"+groupID+"-edit";
-    //
-
-    /*
-    agDisableEditBtns();
-    */
-
-    var dlgDivDialogModalContentHeaderCls = $('#ag-ppl-group-editing-form');//$('<div/>').append('<div id="third">Третий</div>');
-
-
-    showModal('Отредактируйте группу обучающихся',
-        //dlgDivDialogModalContentHeaderCls.html(),
-        dlgDivDialogModalContentHeaderCls,
-        //'Вы подтверждаете выход из процесса обучения? Несохраненные данные будут утеряны?',
-        [{
-            text: 'ОК', action: function () {
-                //handlelogout(event);
-            }
-        }]);
-
-    /*
-    $("tr#"+trid).prop( "disabled", true );
-    $("tr#"+trid).hide();
-    $("tr#"+tridedit).show();
-    */
-}
 
 function agRemovePplgroup(groupID) {
 
